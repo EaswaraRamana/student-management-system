@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Management System</h1>
+        <p>Manage student information easily</p>
+    </header>
+
+    <main>
+        <section class="dashboard">
+
+            <div class="card">
+                <h2>Students</h2>
+                <p id="studentCount">0</p>
+            </div>
+
+            <div class="card">
+                <h2>Courses</h2>
+                <p id="courseCount">0</p>
+            </div>
+
+            <div class="card">
+                <h2>Teachers</h2>
+                <p id="teacherCount">0</p>
+            </div>
+
+        </section>
+
+<section class="students">
+    <h2>Students</h2>
+
+    <button id="addStudentBtn">Add Student</button>
+    <div class="search-container">
+        <input
+           type="text"
+           id="searchInput"
+           placeholder="Search students by name, ID, email or department..."
+    >
+    </div>
+
+    <!-- Add Student Form -->
+    <div id="studentForm" class="student-form">
+
+        <h3>Add New Student</h3>
+
+        <form id="addStudentForm">
+
+            <div class="form-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" required>
+            </div>
+
+            <div class="form-group">
+                <label for="studentName">Full Name</label>
+                <input type="text" id="studentName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="studentEmail">Email</label>
+                <input type="email" id="studentEmail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="studentPhone">Phone</label>
+                <input type="tel" id="studentPhone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="studentDob">Date of Birth</label>
+                <input type="date" id="studentDob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="studentGender">Gender</label>
+
+                <select id="studentGender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="studentDepartment">Department</label>
+
+                <select id="studentDepartment" required>
+                    <option value="">Select Department</option>
+                    <option value="CSE">Computer Science and Engineering</option>
+                    <option value="ECE">Electronics and Communication Engineering</option>
+                    <option value="EEE">Electrical and Electronics Engineering</option>
+                    <option value="MECH">Mechanical Engineering</option>
+                    <option value="CIVIL">Civil Engineering</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="studentCourse">Course</label>
+
+                <select id="studentCourse" required>
+                    <option value="">Select Course</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="B.E">B.E</option>
+                    <option value="M.Tech">M.Tech</option>
+                    <option value="M.E">M.E</option>
+                </select>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit">Save Student</button>
+                <button type="button" id="cancelBtn">Cancel</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- Student List -->
+    <div id="studentList">
+
+    <table class="student-table">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Department</th>
+                <th>Course</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentTableBody">
+        </tbody>
+
+    </table>
+
+</div>
+
+</section>
+<!-- Teachers Section -->
+<section class="teachers">
+    <div class="section-header">
+        <h2>Teachers</h2>
+        <button id="addTeacherBtn">Add Teacher</button>
+    </div>
+
+    <!-- Teacher Form -->
+    <div id="teacherForm" style="display: none;">
+
+        <h3>Add Teacher</h3>
+
+        <form id="addTeacherForm">
+
+            <div class="form-group">
+                <label for="teacherId">Teacher ID</label>
+                <input type="text" id="teacherId" required>
+            </div>
+
+            <div class="form-group">
+                <label for="teacherName">Full Name</label>
+                <input type="text" id="teacherName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="teacherEmail">Email</label>
+                <input type="email" id="teacherEmail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="teacherPhone">Phone</label>
+                <input type="text" id="teacherPhone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="teacherDepartment">Department</label>
+                <input type="text" id="teacherDepartment" required>
+            </div>
+
+            <button type="submit">Save Teacher</button>
+            <button type="button" id="cancelTeacherBtn">Cancel</button>
+
+        </form>
+    </div>
+
+    <!-- Teacher Table -->
+    <div class="table-container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Department</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="teacherTableBody">
+            </tbody>
+
+        </table>
+
+    </div>
+</section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
